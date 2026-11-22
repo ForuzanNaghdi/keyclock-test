@@ -1,0 +1,16 @@
+{
+  "realm":"classroom", "enabled":true, "registrationAllowed":true,
+  "sslRequired":"none", "verifyEmail":false,
+  "clients":[{
+    "clientId":"identity-web","protocol":"openid-connect","publicClient":true,
+    "standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,
+    "redirectUris":["http://localhost:5173/","http://localhost:5173/silent-check-sso.html"],
+    "webOrigins":["http://localhost:5173"],
+    "attributes":{"pkce.code.challenge.method":"S256","post.logout.redirect.uris":"http://localhost:5173/"},
+    "defaultClientScopes":["profile","email","basic"],
+    "protocolMappers":[{
+      "name":"API audience","protocol":"openid-connect","protocolMapper":"oidc-audience-mapper",
+      "config":{"included.custom.audience":"identity-api","access.token.claim":"true","id.token.claim":"false"}
+    }]
+  }]
+}

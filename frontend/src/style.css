@@ -1,0 +1,7 @@
+:root{font-family:Tahoma,system-ui,sans-serif;color:#173734;background:#f1f6f4}
+main{max-width:44rem;margin:6vh auto;padding:1rem}
+section{background:white;border-inline-start:4px solid #288979;border-radius:.6rem;padding:1rem 1.4rem;margin:1rem 0}
+h2{font-size:1.1rem}p{line-height:1.8}
+button{font:inherit;background:#176557;color:white;border:0;border-radius:.45rem;padding:.65rem 1rem;margin:.3rem;cursor:pointer}
+button:disabled{opacity:.45;cursor:default}
+pre{background:#eff5f3;padding:1rem;white-space:pre-wrap;overflow-wrap:anywhere}
