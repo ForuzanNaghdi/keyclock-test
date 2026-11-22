@@ -1,0 +1,15 @@
+services:
+  keycloak:
+    profiles: [local-idp]
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_KEYCLOAK_URL: ${SSO_URL:?Set the Keycloak base URL without a trailing slash}
+        VITE_KEYCLOAK_REALM: ${SSO_REALM:?Set the organization realm}
+        VITE_KEYCLOAK_CLIENT: ${SSO_CLIENT:?Set the public SPA client ID}
+  backend:
+    environment:
+      ISSUER: ${SSO_URL}/realms/${SSO_REALM}
+      JWKS_URL: ${SSO_URL}/realms/${SSO_REALM}/protocol/openid-connect/certs
+      AUDIENCE: ${SSO_API_AUDIENCE:-identity-api}

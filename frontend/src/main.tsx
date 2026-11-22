@@ -22,7 +22,7 @@ function App() {
       {auth.authenticated ? <><p>نام کاربری <b>{auth.tokenParsed?.preferred_username}</b></p>
         <p>شناسهٔ کاربر <bdi>{auth.subject}</bdi></p>
         <button onClick={() => auth.logout({ redirectUri: location.origin + '/' })}>خروج</button></>
-        : <><p>هنوز وارد حسابی نشدی.</p><button onClick={() => auth.login()}>ورود یا ساخت حساب آزمایشی</button></>}
+        : <><p>هنوز وارد حسابی نشدی.</p><button onClick={() => auth.login()}>ورود به حساب</button></>}
     </section>
     <section><h2>۲ · پاسخ FastAPI</h2><p>همان درخواست را با توکن و بدون توکن امتحان کن.</p>
       <button disabled={busy || !auth.authenticated} onClick={() => check(true)}>ارسال با توکن</button>
